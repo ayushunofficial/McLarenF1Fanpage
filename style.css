@@ -1,0 +1,85 @@
+.parent{
+    text-align:center
+  }
+  
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  background-color: orange;
+}
+
+.logodiv{
+  background-color: orange;
+}
+
+.intro {
+  position: relative;
+}
+
+.text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-family: 'Shippori Antique B1';
+}
+
+.intropara{
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Shippori Antique B1';
+  width: 100%;
+}
+
+.center{
+  text-align: center;
+  font-family: 'Shippori Antique B1';
+}
+
+table {
+  border-collapse: collapse;
+  border: 3px black solid;
+  font: 20px sans-serif;
+  font-family: 'Shippori Antique B1';
+}
+
+td {
+  border: 1px black solid;
+  padding: 8px;
+  font-family: 'Shippori Antique B1';
+}
+
+.text{
+  font-family: 'Shippori Antique B1';
+}
+
+.driverimg{
+  width: 100%;
+}
+.carimg{
+  width: 100%;
+  height: 700px;
+}
+
+.twts {
+  text-align: center;
+}
+
+.child {
+  display: inline-block;
+
+  vertical-align: middle;
+}
+
+#btn{
+  padding: 2px;
+  margin: 8px;
+}

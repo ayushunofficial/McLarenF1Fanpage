@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | McLarenInfo.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logodiv">
+        <img class="logo" src="logo.jpg" alt="McLarenLogo">
+    </div>
+
+    <div class="intro">
+        <img src="mclarenbg.jpg" alt="bg" style="width:100%; height: 48rem;">
+        <div class="text-block">
+            <h1>The Legacy</h1>
+            <p class="intropara">Since entering the sport in 1966 under the guidance and restless endeavour of eponymous
+                founder Bruce,
+                McLaren's success has been nothing short of breathtaking. Five glittering decades have yielded countless
+                victories, pole positions and podiums, not to mention eight constructors' championships. What's more,
+                some of the sport's greatest drivers made their names with the team, including Emerson Fittipaldi,
+                Ayrton Senna, Mika Hakkinen and Lewis Hamilton... <br>McLaren has gone on to secure another 181 grand
+                prix wins and 20 World Championships. Whether it’s the F1 drivers on track, mechanics in the garage,
+                management team on the pitwall or engineers in the MTC, they are united by bravery, ingenuity and the
+                thrill of the chase.</p>
+        </div>
+    </div>
+    <h1 class="center">DRIVERS</h1>
+    <img class="driverimg" src="drivers.jpg" alt="">
+
+    <div class='twts'>
+        <div class='child'><a class="twitter-timeline" data-width="650" data-height="540"
+                href="https://twitter.com/LandoNorris?ref_src=twsrc%5Etfw">Tweets by LandoNorris</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class='child'><a class="twitter-timeline" data-width="650" data-height="540"
+                href="https://twitter.com/danielricciardo?ref_src=twsrc%5Etfw">Tweets by danielricciardo</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+    <div>
+        <h1 class="center">The 2022 MCL36</h1>
+        <img class="carimg" src="mcl36.jpg" alt="mcl36">
+    </div>
+    <div class="parent">
+        <h1 class="center">McLarens's Twitter Feed</h1>
+        <a class="twitter-timeline" data-width="690" data-height="620" data-theme="light"
+            href="https://twitter.com/McLarenF1?ref_src=twsrc%5Etfw">Tweets by McLarenF1</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br><br><br>
+
+    </div>
+    <div class="parent">
+        <h1 class="center">Zak Brown's Facebook Feed (McLaren CEO)</h1>
+        <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FZakBrownCEO&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+    </div>
+    <hr>
+    <h1 class="center">TEAM STATISTICS</h1>
+    <hr>
+    <div class="stats">
+
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            d3.text("f1_data_.csv", function (data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("body")
+                    .append("table")
+
+                    .selectAll("tr")
+                    .data(parsedCSV).enter()
+                    .append("tr")
+
+                    .selectAll("td")
+                    .data(function (d) { return d; }).enter()
+                    .append("td")
+                    .text(function (d) { return d; });
+            });
+        </script>
+    </div>
+
+    <div class="center">
+
+
+        <button class="center" id="btn" onclick="runOnPython()" type="button">Refresh Data</button>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+        </script>
+        <script>
+            function runOnPython() {
+                window.open("f1_data_.csv")
+                alert("Statistics Refreshed!");
+                $.ajax({
+                    url: "scraper.py",
+                    context: document.body
+                });
+            }
+        </script>
+    </div>
+
+
+
+    
+
+</body>
+
+</html>
